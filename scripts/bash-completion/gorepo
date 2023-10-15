@@ -1,0 +1,9 @@
+_gorepo() {
+COMPREPLY=($(  COMP_WORDS="${COMP_WORDS[*]}" \
+                 COMP_CWORD=$COMP_CWORD \
+                 COMP_LINE=$COMP_LINE   \
+                 $HOME/.local/share/bash-completion/gorepo/gorepo-completion
+            ) )
+}
+
+complete -F _gorepo -o nosort -o bashdefault -o default gorepo

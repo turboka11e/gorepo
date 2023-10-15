@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Check if the environment variable is set and non-empty
+if [ -n "$GOREPO_REPOS_DIR_PATH" ]; then
+    repos_path="$GOREPO_REPOS_DIR_PATH"
+else
+    repos_path="$HOME/repos"
+fi
+
+if cd "$repos_path/$1"; then
+  git status
+fi
